@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マイクラサーバー名 - ようこそ！</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>名前どうしよ鯖HP</title>
+    <script defer src="/component.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="slide.js"></script>
     <style type="text/tailwindcss">
         @theme{
             --color-deep:#202020;
             --color-selected:#d7a3dc;
         }</style>
 </head>
+
 <body class="bg-blue-50 text-gray-800 font-sans leading-relaxed">
-    <header class="bg-deep text-white pt-4 min-h-[40px] text-center shadow w-full">
-        <div class="px-4 flex flex-col w-full">
-            <nav class=" flex items-center justify-between flex-wrap gap-4">
-                <h3 class="text-2xl font-bold drop-shadow-sm mb-2 text-left flex-1">名前どうしよ鯖HP</h3>
-                <div class="flex gap-4 ml-auto">
-                    <a href="#features" class="bg-deep text-white px-5 py-2 transition hover:bg-selected">サーバーの特徴</a>
-                    <a href="#gallery" class="bg-deep text-white px-5 py-2 transition hover:bg-selected">ギャラリー</a>
-                    <a href="#join" class="bg-deep text-white px-5 py-2 transition hover:bg-selected">参加方法</a>
-                    <a href="#community" class="bg-deep text-white px-5 py-2 transition hover:bg-selected">コミュニティ</a>
-                </div>
-            </nav>
-        </div>
-    </header>
+    <component-container path="/component/header.html"></component-container>
     <section id="gallery" class="mx-auto mb-16 mt-0">
         <div class="relative w-full h-[90vh] overflow-hidden shadow-lg">
             <div id="slideshow" class="absolute inset-0 w-full h-full">
-                <img src="/images/LRT.png" class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000" style="z-index:2;">
-                <img src="/images/LRT.png" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" style="z-index:1;">
-                <img src="/images/LRT.png" class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000" style="z-index:0;">
+                <img src="/images/LRT.png"
+                    class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
+                    style="z-index:2;">
+                <img src="/images/LRT.png"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                    style="z-index:1;">
+                <img src="/images/LRT.png"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
+                    style="z-index:0;">
             </div>
             <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                <span class="w-3 h-3 rounded-full bg-selected opacity-100 transition-all duration-300" id="dot0"></span>
-                <span class="w-3 h-3 rounded-full bg-white opacity-80 transition-all duration-300" id="dot1"></span>
-                <span class="w-3 h-3 rounded-full bg-white opacity-80 transition-all duration-300" id="dot2"></span>
+                <span class="w-3 h-3 rounded-full bg-selected opacity-100 transition-all duration-300 cursor-pointer"
+                    id="dot0" onclick="changeImage(0)"></span>
+                <span class="w-3 h-3 rounded-full bg-white opacity-80 transition-all duration-300 cursor-pointer"
+                    id="dot1" onclick="changeImage(1)"></span>
+                <span class="w-3 h-3 rounded-full bg-white opacity-80 transition-all duration-300 cursor-pointer"
+                    id="dot2" onclick="changeImage(2)"></span>
             </div>
         </div>
     </section>
-    <script src="slide.js"></script>
 </body>
+
 </html>

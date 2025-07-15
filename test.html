@@ -1,0 +1,26 @@
+-------input--------
+------component/header.html------
+<header>にゃーん</header>
+------main.html------
+<!DOCTYPE html>
+<html lang="ja">
+<component path="/component/header.html"></component>
+<div>
+    <h1>テストページ</h1>
+    <p>これはテストページです。</p>
+</div>
+
+</html>
+
+--------compiled--------
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <header>にゃーん</header>
+    <div>
+        <h1>テストページ</h1>
+        <p>これはテストページです。</p>
+    </div>
+
+</html>
